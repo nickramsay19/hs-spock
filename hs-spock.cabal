@@ -1,0 +1,65 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 35792295f7e4d09decd6852c9e2e92a1e9933c9d948b58c07fd5955b30bf8301
+
+name:           hs-spock
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hs-spock#readme>
+homepage:       https://github.com/githubuser/hs-spock#readme
+bug-reports:    https://github.com/githubuser/hs-spock/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hs-spock
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_hs_spock
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable hs-spock-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hs_spock
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hs-spock
+    , Spock >=0.11
+    , mtl
+    , text
+  default-language: Haskell2010
+
+test-suite hs-spock-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hs_spock
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hs-spock
+  default-language: Haskell2010
